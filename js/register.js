@@ -1,11 +1,11 @@
-const logForm = document.querySelector("#login-form");
-logForm.addEventListener("submit", async (e) => {
+const registerForm = document.querySelector("#register-form");
+registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const userData = {
-    userName: logForm.username.value,
-    email: logForm.email.value,
-    password: logForm.password.value,
+    userName: registerForm.username.value,
+    email: registerForm.email.value,
+    password: registerForm.password.value,
   };
 
   const requestOptions = {
@@ -21,7 +21,6 @@ logForm.addEventListener("submit", async (e) => {
     );
     const data = await response.json();
     console.log(data);
-    console.log("Usuario logeado");
   } catch (error) {
     console.log("Error:", error);
   }
