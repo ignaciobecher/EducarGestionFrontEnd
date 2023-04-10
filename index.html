@@ -2,53 +2,87 @@
 <html>
   <head>
     <title>Educar Gestion</title>
-    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--navbar -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
     />
+    <!-- Header -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-  </head>
-
     <style>
-      .hero {
-        background-image: url("https://source.unsplash.com/featured/?school");
+      .hero-section {
+        background-image: url('./rm347-porpla-02-a-01.jpg');
         background-size: cover;
         background-position: center;
-        height: 100vh;
+        height: 500px;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        color: #fff;
         text-align: center;
+        
       }
-      .hero h1 {
-        font-size: 5rem;
-        color: white;
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+      .hero-section h1 {
+        color: black;
+        font-size: 4rem;
         margin-bottom: 2rem;
       }
-      .slider-container {
-        margin-top: 3rem;
-        display: flex;
-        justify-content: center;
+      .hero-section p {
+        color: black;
+        font-size: 1.5rem;
       }
-      .slider-container .slider {
-        width: 80%;
-        margin: 0 auto;
-      }
-      .slider-container .slider .carousel-item img {
-        border-radius: 10px;
+      @media (max-width: 768px) {
+        .hero-section h1 {
+          font-size: 3rem;
+        }
+        .hero-section p {
+          font-size: 1.2rem;
+        }
       }
     </style>
+    <!-- Cards -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous">
+    <!-- Footer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .content {
+        flex: 1 0 auto;
+        padding: 20px;
+      }
+      
+      .footer {
+        flex-shrink: 0;
+        padding: 10px;
+        background-color: #f8f9fa;
+      }
+    </style>
+    <!-- Style.css -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 80px;">
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">EducarGestion</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -57,16 +91,10 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Estudiantes</a>
+              <a class="nav-link" href="#">Acerca de</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Maestros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Cursos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Materias</a>
+              <a class="nav-link" href="#">Preguntas Frecuentes</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -77,144 +105,115 @@
         </div>
       </div>
     </nav>
-    
-    <div class="hero" style="height: 500px;">
-      <div>
-        <h1>Bienvenido a EducarGestion </h1>
-        <p class="lead">Optimiza la gestión de tu escuela con Educar: la plataforma completa y fácil de usar que te permite gestionar desde la inscripción hasta el seguimiento académico de tus estudiantes. Simplifica tu día a día y ofrece una experiencia educativa más fluida para tus alumnos. ¡Únete a nosotros hoy mismo!</p>
+    <!-- header -->
+    <div class="hero-section">
+      <div class="container">
+        <h1>Bienvenido a EducarGestion</h1>
+        <p>Administra tu escuela, cursos, alumnos, clases y asistencia en un solo lugar.</p>
+        <a href="#" class="btn btn-primary mt-3">Empezar</a>
       </div>
     </div>
-    
-    <div class="container w-100 p-3">
-      <div class="row" >
-        <div class="col-md-4 mb-3"  >
-          <div class="card" style="height: 415px;">
-            <img src="https://source.unsplash.com/featured/?travel" class="card-img-top" alt="..." style="height: 300px;">
+    <!-- Cards -->
+    <div class="container py-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://source.unsplash.com/featured/?nature" class="card-img-top" alt="Nature Image">
             <div class="card-body">
-              <h5 class="card-title">Card 1</h5>
-              <p class="card-text">This is some example text for the first card.</p>
+              <h5 class="card-title">Nature</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in sapien euismod, auctor eros quis, condimentum justo. In ante elit, posuere quis lectus a, faucibus bibendum tellus.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-3" >
-          <div class="card" style="height: 415px;">
-            <img src="https://source.unsplash.com/featured/?nature" class="card-img-top" alt="..." style="height: 300px;">
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://source.unsplash.com/featured/?technology" class="card-img-top" alt="Technology Image">
             <div class="card-body">
-              <h5 class="card-title">Card 2</h5>
-              <p class="card-text">This is some example text for the second card.</p>
+              <h5 class="card-title">Technology</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in sapien euismod, auctor eros quis, condimentum justo. In ante elit, posuere quis lectus a, faucibus bibendum tellus.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-3" >
-          <div class="card" style="height: 415px;">
-            <img src="https://source.unsplash.com/featured/?food" class="card-img-top" alt="..." style="height: 300px;">
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://source.unsplash.com/featured/?food" class="card-img-top" alt="Food Image">
             <div class="card-body">
-              <h5 class="card-title">Card 3</h5>
-              <p class="card-text">This is some example text for the third card.</p>
+              <h5 class="card-title">Food</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in sapien euismod, auctor eros quis, condimentum justo. In ante elit, posuere quis lectus a, faucibus bibendum tellus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://source.unsplash.com/featured/?music" class="card-img-top" alt="Music Image">
+            <div class="card-body">
+              <h5 class="card-title">Music</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in sapien euismod, auctor eros quis, condimentum justo. In ante elit, posuere quis lectus a, faucibus bibendum tellus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://source.unsplash.com/featured/?travel" class="card-img-top" alt="Travel Image">
+            <div class="card-body">
+              <h5 class="card-title">Travel</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in sapien euismod, auctor eros quis, condimentum justo. In ante elit, posuere quis lectus a, faucibus bibendum tellus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://source.unsplash.com/featured/?fashion" class="card-img-top" alt="Fashion Image">
+            <div class="card-body">
+              <h5 class="card-title">Fashion</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in sapien euismod, auctor eros quis, condimentum justo. In ante elit, posuere quis lectus a, faucibus bibendum tellus.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  
+    <!-- footer -->
+  </div>
+  <div class="footer">
     <div class="container">
-      <h1>Contactate con nosotros!</h1>
-      <form>
-        <div class="mb-3">
-          <label for="name" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="name" required>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email </label>
-          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
-          <div id="emailHelp" class="form-text">Nunca vamos a compartir tu mail</div>
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
         </div>
-       
-        <div class="mb-3">
-          <label for="message" class="form-label">Mensaje</label>
-          <textarea class="form-control" id="message" rows="3" required></textarea>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <ul class="list-unstyled">
+            <li>123 Main Street</li>
+            <li>Anytown, USA 12345</li>
+            <li>Email: info@example.com</li>
+            <li>Phone: 555-555-5555</li>
+          </ul>
         </div>
-        <button type="submit" class="btn btn-primary">Enviar!</button>
-      </form>
+      </div>
     </div>
-   
-    <footer class="bg-light text-center text-lg-start">
-      <div class="container p-4">
-        <div class="row">
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Contactanos!</h5>
-  
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-dark">Direccion: 123 Main Street, Cordoba</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Telefono: +54 (2657) 123-4567</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Email: educargestion@gmail.com</a>
-              </li>
-            </ul>
-          </div>
-  
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-  
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-dark">Home</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Acerca de nosotros</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Escuelas</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Contactanos</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        <p class="mb-0">© 2023 EducarGestion .Todos los derechos reservados.</p>
-      </div>
-    </footer>
-    <!-- <form action="">
-
-
-
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" />
-
-      <label for="Surname">Surname:</label>
-      <input type="text" name="surname" id="surname" />
-
-      <label for="age">Age:</label>
-      <input type="number" name="age" id="age" />
-
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" />
-
-      <input type="submit" value="Añadir" />
-    </form>
-
-    <label for="">Obtener datos</label>
-    <button type="submit" id="btn-show">Mostrar Alumnos</button> -->
+  </div>
+    <body>
+    <!--!!!!!!!! SCRIPTS!!!!!!!!!! -->
+    <!-- script navbar -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <!-- script hero -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-    <script>
-      var swiper = new Swiper(".swiper-container", {
-        pagination: {
-          el: ".swiper-pagination",
-          type: "bullets",
-          clickable: true,
-        },
-      });
-    </script>
-    <script src="./js/home.js"></script>
+    <!-- Cards script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <!-- Script footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   </body>
 </html>
