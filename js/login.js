@@ -16,12 +16,13 @@ logForm.addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch(
-      "http://localhost:3001/users/register",
+      "http://localhost:3001/users/login",
       requestOptions
     );
     const data = await response.json();
     console.log(data);
     console.log("Usuario logeado");
+    window.location.replace("./logedHomepage.html");
   } catch (error) {
     console.log("Error:", error);
   }

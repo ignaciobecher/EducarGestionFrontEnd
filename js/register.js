@@ -21,6 +21,7 @@ registerForm.addEventListener("submit", async (e) => {
     );
     const data = await response.json();
     console.log(data);
+    window.location.replace("./login.html");
   } catch (error) {
     console.log("Error:", error);
   }
