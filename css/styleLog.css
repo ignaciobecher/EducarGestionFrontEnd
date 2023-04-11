@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+body {
+  font-family: "Oswald", sans-serif;
+  background-image: url("../rm347-porpla-02-a-01.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form {
+  text-align: center; /* Alinea el contenido del formulario en el centro */
+  margin-top: 100px; /* Ajusta el margen superior */
+  margin-left: auto; /* Ajusta el margen izquierdo */
+  margin-right: auto; /* Ajusta el margen derecho */
+  width: 100%; /* Establece el ancho del formulario */
+}
+
+form input {
+  width: 250px;
+  height: 30px;
+}
+
+form button {
+  margin-top: 20px;
+}
+
+label {
+  font-size: 30px;
+  display: inline-block;
+  width: 200px;
+  text-align: left;
+  margin-right: 10px;
+}
+
+.rgt-link {
+  text-align: center;
+}
+
+.rgt-link a {
+  text-decoration: none;
+  color: black;
+}
+
+.rgt-link a:hover {
+  color: blueviolet;
+}
+
+h1 {
+  text-align: center;
+}
