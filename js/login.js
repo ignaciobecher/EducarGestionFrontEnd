@@ -1,4 +1,5 @@
 const logForm = document.querySelector("#login-form");
+
 logForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -20,7 +21,7 @@ logForm.addEventListener("submit", async (e) => {
       requestOptions
     );
     const data = await response.json();
-    console.log(data);
+    console.log(data.data.user._id);
     console.log("Usuario logeado");
     window.location.replace("./logedHomepage.html");
   } catch (error) {
