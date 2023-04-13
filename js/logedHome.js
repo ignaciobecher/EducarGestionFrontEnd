@@ -3,7 +3,7 @@ const list = document.createElement("ul");
 const getQualifications = async () => {
   try {
     const res = await fetch(
-      `http://localhost:3001/students/6427315b3da436bce7ba7c74`
+      `https://backend-school-production.up.railway.app/students`
     );
     const data = await res.json();
     const grades = data.data.grade;
