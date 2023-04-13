@@ -16,7 +16,7 @@ registerForm.addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch(
-      "http://localhost:3001/users/register",
+      "https://backend-school-production.up.railway.app/users/register",
       requestOptions
     );
     const data = await response.json();

@@ -19,7 +19,7 @@ logForm.addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch(
-      "http://localhost:3001/users/login",
+      "https://backend-school-production.up.railway.app/login",
       requestOptions
     );
     const data = await response.json();
