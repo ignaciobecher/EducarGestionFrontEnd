@@ -2,11 +2,19 @@ const list = document.createElement("ul");
 
 const getQualifications = async () => {
   try {
-    const res = await fetch(
-      `https://backend-school-production.up.railway.app/students`
-    );
+    const token = localStorage.getItem("token");
+    const tokenData = jwtDecode(token);
+    const userId = tokenData.user._id;
+    const res = await fetch(`http;//localhost:3001/students/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const data = await res.json();
+    console.log(userId);
+    console.log(data);
     const grades = data.data.grade;
+    console.log(grades);
     grades.forEach((grade) => {
       const listItem = document.createElement("li");
       listItem.textContent = `${grade.subject}:${grade.qualification}`;
