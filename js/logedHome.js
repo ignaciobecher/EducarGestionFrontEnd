@@ -1,11 +1,13 @@
 const list = document.createElement("ul");
+import jwtDecode from "../node_modules/jwt-decode";
 
 const getQualifications = async () => {
   try {
     const token = localStorage.getItem("token");
     const tokenData = jwtDecode(token);
     const userId = tokenData.user._id;
-    const res = await fetch(`http;//localhost:3001/students/${userId}`, {
+
+    const res = await fetch(`http://localhost:3001/students/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
