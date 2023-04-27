@@ -1,5 +1,5 @@
 const logForm = document.querySelector("#login-form");
-export let userId = null;
+let userId;
 const list = document.createElement("ul");
 
 logForm.addEventListener("submit", async (e) => {
