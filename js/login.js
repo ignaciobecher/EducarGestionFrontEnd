@@ -6,7 +6,6 @@ logForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const userData = {
-    userName: logForm.username.value,
     email: logForm.email.value,
     password: logForm.password.value,
   };
@@ -23,10 +22,14 @@ logForm.addEventListener("submit", async (e) => {
       requestOptions
     );
     const data = await response.json();
-
+    console.log(data);
     console.log(data.data.user._id);
     userId = data.data.user._id;
     console.log("Usuario logeado");
+
+    // Guardar el token en el local storage del navegador
+    localStorage.setItem("token", data.data.token);
+    localStorage.setItem("userId", userId);
 
     window.location.replace("./logedHomepage.html");
   } catch (error) {
