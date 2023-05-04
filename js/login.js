@@ -26,7 +26,6 @@ logForm.addEventListener("submit", async (e) => {
     console.log(data.data.user._id);
     userId = data.data.user._id;
     console.log("Usuario logeado");
-
     // Guardar el token en el local storage del navegador
     localStorage.setItem("token", data.data.token);
     localStorage.setItem("userId", userId);
@@ -34,5 +33,6 @@ logForm.addEventListener("submit", async (e) => {
     window.location.replace("./logedHomepage.html");
   } catch (error) {
     console.log("Error:", error);
+    window.alert("Error al logear, intente nuevamente!");
   }
 });
