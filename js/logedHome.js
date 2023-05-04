@@ -12,6 +12,7 @@ const getIntro = async () => {
   intro.appendChild(name);
 };
 
+//FUNCION QUE MUESTRA LA FECHA
 const showDate = () => {
   const date = document.getElementById("date");
   let todaysDate = new Date();
