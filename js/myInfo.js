@@ -1,9 +1,12 @@
+//Constante del userId
 const userId = localStorage.getItem("userId");
+//Constantes con los elementos html
 const studentName = document.getElementById("name");
 const studentSurname = document.getElementById("surname");
 const studentEmail = document.getElementById("email");
 const studentAddress = document.getElementById("address");
 const studentPhone = document.getElementById("phone");
+const studentAge = document.getElementById("age");
 const editBtn = document.getElementById("edit-info");
 const saveBtn = document.getElementById("save-info");
 
@@ -15,43 +18,37 @@ const getUserData = async () => {
   //Elementos de la data
   const studName = userData.data.name;
   const studSurname = userData.data.surname;
-  const studEmail = userData.data.email;
   const studAddress = userData.data.address;
   const studPhone = userData.data.phone;
+  const studAge = userData.data.age;
 
+  //Llenar los inputs con los datos de la bd
+  studentName.value = studName;
+  studentSurname.value = studSurname;
+  studentAddress.value = studAddress;
+  studentPhone.value = studPhone;
+  studentAge.value = studAge;
+
+  //Validar si los inputs estan vacios
   if (
     studName === "" ||
     studSurname === "" ||
     studAddress === "" ||
     studPhone === ""
   ) {
-    alert("Por favor complete todos los campos");
+    alert("Actualice sus datos");
   }
-
-  console.log(studName, studSurname, studPhone, studEmail, studAddress);
+  desableInput();
 };
-
-//EJECUTAR AL CARGAR PAGINA
-window.onload = () => {
-  getUserData();
-};
-
-//BOTON EDITAR
-editBtn.addEventListener("click", () => {
-  studentName.removeAttribute("disabled", "");
-  studentSurname.removeAttribute("disabled", "");
-  studentEmail.removeAttribute("disabled", "");
-  studentAddress.removeAttribute("disabled", "");
-  studentPhone.removeAttribute("disabled", "");
-});
-
+//FUNCION PARA ACTUALIZAR LOS DATOS
 const fillInfo = async () => {
   try {
     userInfo = {
-      studentName: studentName.value,
-      studentSurname: studentSurname.value,
-      studentAddress: studentAddress.value,
-      studentPhone: studentPhone.value,
+      name: studentName.value,
+      surname: studentSurname.value,
+      address: studentAddress.value,
+      phone: studentPhone.value,
+      age: studentAge.value,
     };
     const response = await fetch(
       `http://localhost:3001/users/userData/${userId}`,
@@ -62,12 +59,46 @@ const fillInfo = async () => {
       }
     );
     const data = await response.json();
+    console.log(data);
     console.log("Datos actualizados");
   } catch (error) {
     console.log(error);
   }
 };
 
-saveBtn.addEventListener("click", () => {
-  fillInfo();
+//FUNCION PARA ACTIVAR LOS INPUTS
+const enableInput = () => {
+  studentName.removeAttribute("disabled", "");
+  studentSurname.removeAttribute("disabled", "");
+
+  studentAddress.removeAttribute("disabled", "");
+  studentPhone.removeAttribute("disabled", "");
+  studentAge.removeAttribute("disabled", "");
+};
+
+//FUNCION PARA DESACTIVAR LOS INPUTS
+const desableInput = () => {
+  studentName.setAttribute("disabled", "");
+  studentSurname.setAttribute("disabled", "");
+
+  studentAddress.setAttribute("disabled", "");
+  studentPhone.setAttribute("disabled", "");
+  studentAge.setAttribute("disabled", "");
+};
+
+//BOTON GUARDAR DATOS
+saveBtn.addEventListener("click", async () => {
+  await fillInfo();
+  await fillInfo();
+  desableInput();
 });
+
+//BOTON EDITAR
+editBtn.addEventListener("click", () => {
+  enableInput();
+});
+
+//EJECUTAR AL CARGAR PAGINA
+window.onload = () => {
+  getUserData();
+};
