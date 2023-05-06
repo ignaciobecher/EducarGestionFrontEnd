@@ -9,6 +9,7 @@ const studentPhone = document.getElementById("phone");
 const studentAge = document.getElementById("age");
 const editBtn = document.getElementById("edit-info");
 const saveBtn = document.getElementById("save-info");
+const studentSchool = document.getElementById("school");
 
 //FUNCION PARA TRAER LA DATA DEL USUARIO
 const getUserData = async () => {
@@ -21,6 +22,7 @@ const getUserData = async () => {
   const studAddress = userData.data.address;
   const studPhone = userData.data.phone;
   const studAge = userData.data.age;
+  const studSchool = userData.data.userSchool[0].name;
 
   //Llenar los inputs con los datos de la bd
   studentName.value = studName;
@@ -28,6 +30,7 @@ const getUserData = async () => {
   studentAddress.value = studAddress;
   studentPhone.value = studPhone;
   studentAge.value = studAge;
+  studentSchool.value = studSchool;
 
   //Validar si los inputs estan vacios
   if (
@@ -59,8 +62,7 @@ const fillInfo = async () => {
       }
     );
     const data = await response.json();
-    console.log(data);
-    console.log("Datos actualizados");
+    window.alert("Datos actualizados correctamente");
   } catch (error) {
     console.log(error);
   }
@@ -80,10 +82,10 @@ const enableInput = () => {
 const desableInput = () => {
   studentName.setAttribute("disabled", "");
   studentSurname.setAttribute("disabled", "");
-
   studentAddress.setAttribute("disabled", "");
   studentPhone.setAttribute("disabled", "");
   studentAge.setAttribute("disabled", "");
+  studentSchool.setAttribute("disabled", "");
 };
 
 //BOTON GUARDAR DATOS
