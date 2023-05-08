@@ -12,3 +12,7 @@ hamburger.addEventListener("click", () => {
   //Hamburger Animation
   hamburger.classList.toggle("toggle");
 });
+
+document.oncontextmenu = function () {
+  return false;
+};
