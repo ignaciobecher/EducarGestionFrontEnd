@@ -1,3 +1,5 @@
+import { saludar } from "./login.js";
+
 const registerForm = document.querySelector("#register-form");
 registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();

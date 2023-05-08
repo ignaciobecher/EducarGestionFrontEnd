@@ -1,12 +1,11 @@
 const logForm = document.querySelector("#login-form");
-export let userId = null;
+let userId;
 const list = document.createElement("ul");
 
 logForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const userData = {
-    userName: logForm.username.value,
     email: logForm.email.value,
     password: logForm.password.value,
   };
@@ -19,17 +18,21 @@ logForm.addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch(
-      "https://backend-school-production.up.railway.app/users/login",
+      "http://localhost:3001/users/login",
       requestOptions
     );
     const data = await response.json();
-
+    console.log(data);
     console.log(data.data.user._id);
     userId = data.data.user._id;
     console.log("Usuario logeado");
+    // Guardar el token en el local storage del navegador
+    localStorage.setItem("token", data.data.token);
+    localStorage.setItem("userId", userId);
 
     window.location.replace("./logedHomepage.html");
   } catch (error) {
     console.log("Error:", error);
+    window.alert("Error al logear, intente nuevamente!");
   }
 });
