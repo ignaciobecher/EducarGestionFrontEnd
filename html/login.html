@@ -9,18 +9,31 @@
   </head>
   <body>
     <div class="container right-panel-active">
-      <!-- Sign Up -->
       <div class="container__form container--signup">
-        <form action="#" class="form" id="form1">
+        <form class="form" id="form1">
           <h2 class="form__title">Log In</h2>
           <input type="text" placeholder="usuario" class="input" />
-          <input type="email" placeholder="email" class="input" />
-          <input type="password" placeholder="contraseña" class="input" />
-          <button class="btn">Iniciar sesion</button>
+          <input
+            type="email"
+            name=""
+            email
+            placeholder="email"
+            id="email"
+            class="input"
+          />
+          <input
+            type="password"
+            placeholder="contraseña"
+            id="password"
+            class="input"
+            name="password"
+          />
+          <button class="btn" id="btn-login" type="button">
+            Iniciar sesión
+          </button>
         </form>
       </div>
 
-      <!-- Overlay -->
       <div class="container__overlay">
         <div class="overlay">
           <div class="overlay__panel overlay--right">
@@ -29,5 +42,6 @@
         </div>
       </div>
     </div>
+    <script src="../js/login.js"></script>
   </body>
 </html>
