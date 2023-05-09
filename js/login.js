@@ -1,10 +1,10 @@
-const logForm = document.querySelector("#login-form");
+const logForm = document.querySelector("#form1");
+const btnLogin = document.getElementById("btn-login");
 let userId;
-const list = document.createElement("ul");
 
-logForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
+const logUser = async () => {
+  const userInput = document.getElementById("email").value;
+  const passwordInput = document.getElementById("password").value;
   const userData = {
     email: logForm.email.value,
     password: logForm.password.value,
@@ -22,17 +22,19 @@ logForm.addEventListener("submit", async (e) => {
       requestOptions
     );
     const data = await response.json();
-    console.log(data);
-    console.log(data.data.user._id);
     userId = data.data.user._id;
-    console.log("Usuario logeado");
+    console.log("Usuario logeado ok", userId);
     // Guardar el token en el local storage del navegador
     localStorage.setItem("token", data.data.token);
     localStorage.setItem("userId", userId);
-
-    window.location.replace("./logedHomepage.html");
+    window.location.href="./dashboard.html"
   } catch (error) {
     console.log("Error:", error);
     window.alert("Error al logear, intente nuevamente!");
   }
+};
+
+btnLogin.addEventListener("click", async (e) => {
+  e.preventDefault();
+  await logUser();
 });

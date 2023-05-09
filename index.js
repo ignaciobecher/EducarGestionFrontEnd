@@ -16,9 +16,9 @@ hamburger.addEventListener("click", () => {
 });
 
 btnLog.addEventListener("click", () => {
-  window.location.href = "./html/login.html";
+  window.location.href = "./html/pageInConstruction.html";
 });
 
 btnReg.addEventListener("click", () => {
-  window.location.href = "./html/register.html";
+  window.location.href = "./html/pageInConstruction.html";
 });
