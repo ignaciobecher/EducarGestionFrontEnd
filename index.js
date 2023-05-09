@@ -1,6 +1,8 @@
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
+const btnLog = document.getElementById("btn-login");
+const btnReg = document.getElementById("btn-register");
 
 hamburger.addEventListener("click", () => {
   //Animate Links
@@ -13,6 +15,10 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("toggle");
 });
 
-document.oncontextmenu = function () {
-  return false;
-};
+btnLog.addEventListener("click", () => {
+  window.location.href = "./html/login.html";
+});
+
+btnReg.addEventListener("click", () => {
+  window.location.href = "./html/register.html";
+});
