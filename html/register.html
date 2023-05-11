@@ -11,12 +11,30 @@
     <div class="container right-panel-active">
       <!-- Sign Up -->
       <div class="container__form container--signup">
-        <form action="#" class="form" id="form1">
+        <form action="#" class="form" id="register-form">
           <h2 class="form__title">Registrarse</h2>
-          <input type="text" placeholder="usuario" class="input" />
-          <input type="email" placeholder="email" class="input" />
-          <input type="password" placeholder="contraseña" class="input" />
-          <button class="btn">Registrarse</button>
+          <input
+            id="username"
+            type="text"
+            placeholder="usuario"
+            class="input"
+            name="username"
+          />
+          <input
+            type="email"
+            placeholder="email"
+            class="input"
+            name="email"
+            id="email"
+          />
+          <input
+            type="password"
+            placeholder="contraseña"
+            class="input"
+            name="password"
+            id="password"
+          />
+          <button class="btn" id="btn-register">Registrarse</button>
         </form>
       </div>
 
@@ -29,5 +47,6 @@
         </div>
       </div>
     </div>
+    <script src="../js/register.js"></script>
   </body>
 </html>
