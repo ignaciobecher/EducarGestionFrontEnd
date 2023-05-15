@@ -168,8 +168,9 @@ const showQualifications = async () => {
 
   for (let i = 0; i < subject.length; i++) {
     const subjects = subject[i];
-    mainContent.innerHTML = `<h1 id="qualis">Calificaciones</h1>
-    <div class="container" id="container">
+    mainContent.innerHTML = `
+    <h1>Calificaciones </h1>
+    <div class="container1" id="container1">
       <div id="subjects-div">
         <h2 id="subjects">Materias</h2>
         <p>Lengua</p>
@@ -177,7 +178,12 @@ const showQualifications = async () => {
 
       <div id="grades-div">
         <h2 id="grades">Notas</h2>
-        <p>9</p>
+        <p id="p-qualis">9</p>
+        <p id="p-qualis">9</p>
+        <p id="p-qualis">9</p>
+        <p id="p-qualis">9</p>
+        <p id="p-qualis">9</p>
+        
       </div>
     </div>`;
   }

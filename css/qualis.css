@@ -4,17 +4,27 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
-#container {
+#container1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-gap: 10px;
 }
 
 #subjects-div {
-  display: grid;
   grid-column: 1;
+  grid-row: 2;
 }
 
 #grades-div {
   display: grid;
   grid-column: 2;
+  grid-row: 2;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+p {
+  display: grid;
+  grid-row: 2;
 }
