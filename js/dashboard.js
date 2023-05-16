@@ -17,52 +17,44 @@ const showHomePage = async () => {
   const res = await fetch(`http://localhost:3001/users/userHome/${userId}`);
   const userData = await res.json();
   const userName = userData.data.name;
-  mainContent.innerHTML = `<div class="new-wrapper">
-  <div id="main">
-    <div id="main-contents">
-      <h1 id="mainTittle">Bienvenido de nuevo ${userName}</h1>
-
-      <p class="intro">
-        <strong
-          >This is a multi-level side navigation pattern with hover and
-          push</strong
-        >. Hovering over the menu will reveal its lables and clicking the
-        hamburger icon pins the menu open.
-      </p>
-
-      <h2>Checkbox Hack</h2>
-
-      <p>
-        I started by using the checkbox hack but ran into its limitations
-        when I tried to implement the 'push' behaviour. It works for the
-        secondary menus but the input element and its corresponding label
-        can really only affect the adjacent element (i.e. I couldn't target
-        the page container to push it over). So, I added...
-      </p>
-
-      <h2>A Touch of jQuery</h2>
-      <p>
-        I'm sure this could be done with vanilla javascript, but that is not
-        my strong suit. So here we are. You might be thinking, "Why not just
-        use JQuery for all of the functionality?" Well, you can! Fork it and
-        go nuts! Maybe drop me a line if you do.
-      </p>
-
-      <p class="small">
-        <strong>This is small text</strong>. Lorem Ipsum is simply dummy
-        text from the printing and typesetting industry. Lorem Ipsum has
-        been the industry's standard dummy text ever since the 1500s, when
-        an unknown printer took a galley of type and scrambled it to make a
-        type specimen book. It has survived not only five centuries, but
-        also the leap into electronic typesetting, remaining essentially
-        unchanged. It was popularized in the 1960s with the release of
-        Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
-      </p>
+  if (userName === "" || !userName) {
+    mainContent.innerHTML = `<div class="new-wrapper">
+    <div id="main">
+      <div id="main-contents">
+        <h1 id="mainTittle">Bienvenido de nuevo </h1>
+  
+        <p class="intro">
+          <strong
+            >En tu dashboard encontraras todos los datos referidos a tu cursada.</strong
+          >. Si accediste desde una computadora, presiona las tres lineas en el recuadro blanco o simplemente pasa tu mouse por encima para ver tus datos.
+        </p>
+  
+        
+  
+        <p>
+          Si accedes desde un dispositivo movil, presiona el recuadro blanco y accede a toda tu informacion academica.
+        </p>
+      </div>
     </div>
-  </div>
-</div>`;
+  </div>`;
+  } else {
+    mainContent.innerHTML = `<div class="new-wrapper">
+    <div id="main">
+      <div id="main-contents">
+        <h1 id="mainTittle">Bienvenido de nuevo ${userName} </h1>
+  
+        <p class="intro">
+          <strong
+            >En tu dashboard encontraras todos los datos referidos a tu cursada.</strong
+          > Si accediste desde una computadora, presiona las tres lineas en el recuadro blanco o simplemente pasa tu mouse por encima para ver tus datos.
+        </p>
+        <p>
+          Si accedes desde un dispositivo movil, presiona el recuadro blanco y accede a toda tu informacion academica.
+        </p>
+      </div>
+    </div>
+  </div>`;
+  }
 };
 
 //!!!!!!!!!!!!!!MOSTRAR MIS DATOS!!!!!!!!!!!!!!!!!!!
@@ -70,6 +62,7 @@ const showHomePage = async () => {
 const showPersonalInfo = async () => {
   const res = await fetch(`http://localhost:3001/users/userHome/${userId}`);
   const userData = await res.json();
+  const userName = userData.data.name;
   mainContent.innerHTML = `
   <div class="mis-datos">
         <h2>Mis datos</h2>
@@ -178,12 +171,7 @@ const showQualifications = async () => {
 
       <div id="grades-div">
         <h2 id="grades">Notas</h2>
-        <p id="p-qualis">9</p>
-        <p id="p-qualis">9</p>
-        <p id="p-qualis">9</p>
-        <p id="p-qualis">9</p>
-        <p id="p-qualis">9</p>
-        
+        <p id="p-qualis"></p>
       </div>
     </div>`;
   }
